@@ -1,4 +1,4 @@
-#pip install termcolor
+#os.system('pip install termcolor')
 from os import listdir
 import sys
 import os
@@ -6,7 +6,6 @@ from termcolor import colored
 
 os.system('TITLE AoV Track ID xml file 1.0')
 os.system('color')
-#os.system('color 7F')
 
 DIR_PATH = './INP/'
 EXT = ['xml']
@@ -43,5 +42,4 @@ else:
     else:
         print(colored('\n\t\tINP\ HAVE NO FILE!!!','red'))
 print(colored('\nEND.','green'))
-input()
-
+os.system('pause')
