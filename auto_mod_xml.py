@@ -23,8 +23,8 @@ else:
         file_ext = file.split('.')[-1]
         if file_ext in EXT:
                 havefile=havefile+1
+    allfile = havefile
     if havefile>0:
-        allfile = havefile
         modfile=0
         notmodfile=0
         effect = bytes(b'prefab_skill_effects/hero_skill_effects/')
