@@ -6,7 +6,6 @@ import re
 
 os.system('TITLE AoV Auto Modify File 1.0')
 os.system('color')
-#os.system('color 7F')
 
 DIR_PATH = './INP/'
 
@@ -27,9 +26,8 @@ else:
         allfile=0
         modfile=0
         notmodfile=0
-        effect = bytes(b'prefab_skill_effects/hero_skill_effects/')
-        #print(delguid.decode())
-        skilleffect=0
+        effect = b'prefab_skill_effects/hero_skill_effects/'
+        
         streffect=b''
         
         print(colored('\n\tCheck file from "INP/"...','yellow'))
@@ -40,7 +38,7 @@ else:
         skinid=(input(colored('\tSkin ID: ', 'green')))
         
         heroid=int(int(skinid,base=10)/100)
-        changeeffect = streffect + str.encode(skinid)  + b'\x2f'
+        changeeffect = effect+ streffect + str.encode(skinid)  + b'\x2f'
         
         for file in listdir(DIR_PATH):
             file_ext = file.split('.')[-1]
