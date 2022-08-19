@@ -1,6 +1,5 @@
 #os.system('pip install termcolor')
 from os import listdir
-import sys
 import os
 from termcolor import colored
 
@@ -10,7 +9,6 @@ os.system('color')
 DIR_PATH = './INP/'
 
 print(colored('AoV Track ID xml file By Kourain', 'green'))
-print(colored('DISCORD: Kourain#1517', 'green'))
 print(colored('Ver: {}.{}'.format(1, 0), 'green'))
 
 if os.path.isdir('INP')== 0 :
@@ -25,7 +23,7 @@ else:
     if havefile>0:
         for file in listdir(DIR_PATH):
             file_ext = file.split('.')[-1]
-            if file_ext in EXT:
+            if file_ext in 'xml':
                 with open(f'./INP/{file}', 'rb') as f:
                     
                     strin = f.read()
