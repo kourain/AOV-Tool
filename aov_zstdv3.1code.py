@@ -62,12 +62,12 @@ def main():
                 fdv+=1
                 with open(f'./INP/{file}', 'rb') as f:
                     content = zstd_aes_nothing(f.read())
-                with open(f'./OUT/{file}', 'wb') as output_file:
-                    output_file.write(content)
-                    ok+=1
+                    with open(f'./OUT/{file}', 'wb') as f:
+                        f.write(content)
+                        ok+=1
                     
-        print(colored("\n{} tệp".format(fdv),'yellow'))
-        print(colored("Thành công {}, thất bại {}".format(ok,fdv-ok),'yellow'))
+        print(colored(f"\n{fdv} tệp",'yellow'))
+        print(colored(f"Thành công {ok}, thất bại {fdv}",'yellow'))
 if __name__=="__main__":
     main()
     print(colored('Kết thúc.\n\n','green'))
