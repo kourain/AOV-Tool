@@ -13,33 +13,33 @@ struct msesid07{
         std::string data;
 };
 
-void getinputdata(msesid07 *object,int size)
+void getinputdata(msesid07 *object,size_t size)
 {
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
         char temp;
-        for (int lencount = 0; lencount < 4; lencount++)
+        for (size_t lencount = 0; lencount < 4; lencount++)
         { 
             std::cin.get(temp);
             object[i].len[lencount]=uint8_t(temp);
         }
-        for (int namebyidcount = 0; namebyidcount < 5; namebyidcount++)
+        for (size_t namebyidcount = 0; namebyidcount < 5; namebyidcount++)
         { 
             std::cin.get(temp);
             object[i].namebyid[namebyidcount]=uint8_t(temp);
         }
-        for (int namecount = 0; namecount < 4; namecount++)
+        for (size_t namecount = 0; namecount < 4; namecount++)
         { 
             std::cin.get(temp);
             object[i].lenname[namecount]=uint8_t(temp);
         }
         std::getline(std::cin,object[i].name,'\x00');
-        for (int dist = 0; dist < 41; dist++)
+        for (size_t dist = 0; dist < 41; dist++)
         {
             std::cin.get(temp);
             object[i].dirname[dist]=uint8_t(temp);
         }
-        for (int lendatacount = 0; lendatacount < 4; lendatacount++)
+        for (size_t lendatacount = 0; lendatacount < 4; lendatacount++)
         {
             std::cin.get(temp);
             object[i].lendata[lendatacount]=uint8_t(temp);
@@ -49,29 +49,29 @@ void getinputdata(msesid07 *object,int size)
     }
 }
 
-void outputdata(msesid07 object[],uint8_t header[],int size=0){
+void outputdata(msesid07 object[],uint8_t header[],size_t size=0){
     for (size_t i = 0; i < 140; i++)
         std::cout<<char(header[i]);
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
-        for (int lencount = 0; lencount < 4; lencount++)
+        for (size_t lencount = 0; lencount < 4; lencount++)
         { 
             std::cout<<char(object[i].len[lencount]);
         }
-        for (int namebyidcount = 0; namebyidcount < 5; namebyidcount++)
+        for (size_t namebyidcount = 0; namebyidcount < 5; namebyidcount++)
         { 
             std::cout<<char(object[i].namebyid[namebyidcount]);
         }
-        for (int namecount = 0; namecount < 4; namecount++)
+        for (size_t namecount = 0; namecount < 4; namecount++)
         { 
             std::cout<<char(object[i].lenname[namecount]);
         }
         std::cout<<object[i].name<<char(0x00);
-        for (int dist = 0; dist < 41; dist++)
+        for (size_t dist = 0; dist < 41; dist++)
         {
             std::cout<<char(object[i].dirname[dist]);
         }
-        for (int lendatacount = 0; lendatacount < 4; lendatacount++)
+        for (size_t lendatacount = 0; lendatacount < 4; lendatacount++)
         {
             std::cout<<char(object[i].lendata[lendatacount]);
         }
