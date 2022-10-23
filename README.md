@@ -10,7 +10,7 @@ but more soon
 
 # AoV_zstd v3.1
 Decompress and compress tools
-zstd an AES but not now
+zstd and AES but not now
 
 # mses tree
 just tree, not an official tool
